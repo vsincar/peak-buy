@@ -12,9 +12,10 @@ nav {
   left: 0;
   right: 0;
   z-index: 1000;
+  width: 100%;
   display: flex;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 1rem;
   background-color: var(--background-color);
   height: 4rem;
 }
@@ -59,7 +60,7 @@ nav > * {
 }
 
 .logo > span {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: 1rem;
   font-weight: 800;
 }
 
@@ -67,8 +68,8 @@ nav > * {
   align-items: center;
   display: flex;
   position: relative;
-  width: 100%;
-  max-width: 35rem;
+  min-width: 6rem;
+  max-width: 30rem;
   margin: 0 auto;
 }
 
@@ -292,23 +293,27 @@ ul {
     width: max-content;
   }
 }
-
-@media (max-width: 1400px) {
-  .searchbar {
-    max-width: 30rem;
+/* Mobile devices */
+@media (max-width: 480px) {
+  /* Add styles for mobile devices here */
+  #cart-container #cart-text {
+    display: none;
   }
 }
 
-@media (max-width: 1024px) {
+/* iPads, Tablets */
+@media (max-width: 768px) {
   nav {
-    padding: 0 1rem;
+    padding: 0 0.4rem;
+    width: 100%;
   }
-
+  .searchbar {
+    width: 8rem;
+  }
   .hamburger {
     display: block;
     color: var(--text-color);
     font-size: 30px;
-    margin-left: 2rem;
   }
 
   .menu-links {
@@ -372,42 +377,22 @@ ul {
     order: -1;
     margin-bottom: 1rem;
   }
+}
 
+/* Small screens, laptops */
+@media (max-width: 1024px) {
+  /* Add styles for small screens and laptops here */
   .cart-text {
     display: inline;
   }
 }
 
-@media (max-width: 760px) {
-  #cart-container {
-    width: auto;
-  }
-
-  #cart-container #cart-text {
-    display: none;
-  }
-
-  #cart-container .link-icon {
-    margin-right: 0;
-  }
-
-  .hamburger {
-    font-size: 20px;
-  }
-
-  .searchbar {
-    max-width: 20rem;
-  }
+/* Desktops, large screens */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  /* Add styles for desktops and large screens here */
 }
 
-@media (max-width: 480px) {
-  .searchbar {
-    max-width: 15rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .searchbar {
-    max-width: 10rem;
-  }
+/* Extra large screens, TV */
+@media screen and (min-width: 1201px) {
+  /* Add styles for extra large screens and TVs here */
 }
