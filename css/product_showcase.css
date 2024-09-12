@@ -1,0 +1,141 @@
+.product-showcase {
+  margin: 2rem;
+  padding: 2rem;
+  background-color: rgba(255, 214, 8, 0.116);
+  border-radius: 10px;
+}
+
+/* HTML: <div class="ribbon">Your text content</div> */
+.showcase-new-product-tag {
+  display: flex;
+  justify-content: center;
+  font-size: 12pt;
+  font-weight: 500;
+  color: #000;
+}
+.showcase-new-product-tag {
+  --f: 0.1em; /* control the folded part */
+  --r: 0.8em; /* control the cutout */
+
+  position: absolute;
+  right: 0.8rem;
+  top: calc(-1 * var(--f));
+  padding: 0.2em;
+  border: solid #0000;
+  border-width: 0 calc(2 * var(--f)) var(--r) 0;
+  background: radial-gradient(50% 100% at bottom, #0005 98%, #0000 101%) 100% 0 /
+    calc(2 * var(--f)) var(--f) no-repeat border-box;
+  background-color: var(--primary-color);
+  border-radius: var(--f) var(--f) 0 0;
+  clip-path: polygon(
+    100% 0,
+    0 0,
+    0 100%,
+    calc(50% - var(--f)) calc(100% - var(--r)),
+    calc(100% - 2 * var(--f)) 100%,
+    calc(100% - 2 * var(--f)) var(--f),
+    100% var(--f)
+  );
+}
+
+.showcase-title {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* Reduced gap between cards */
+  justify-content: center;
+}
+
+.showcase-product-card {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 0.6rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 18rem;
+  flex: 0 0 18rem; /* Adjusted flex-basis to match width */
+}
+
+.product-image img {
+  width: 100%;
+  height: 20rem;
+  background-color: #000;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.showcase-product-title {
+  margin-top: -0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.showcase-product-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.showcase-product-price {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.add-to-cart {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .product-showcase {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  .product-grid {
+    justify-content: center;
+    gap: 0.5rem; /* Further reduced gap for smaller screens */
+  }
+
+  .showcase-product-card {
+    flex: 0 0 20rem;
+  }
+}
+@media (max-width: 600px) {
+  .product-showcase {
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+  .showcase-product-card {
+    width: 16rem;
+  }
+}
+@media (max-width: 563px) {
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .showcase-product-card {
+    width: 20rem;
+    max-width: 100%;
+  }
+}

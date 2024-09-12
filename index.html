@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="PeakBuy">PeakBuy</title>
+    <link rel="icon" href="./img/logo-icon.svg">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/hero.css">
+    <link rel="stylesheet" href="./css/product_showcase.css">
+    <link rel="stylesheet" href="./css/cart_notif.css">
+    <link rel="stylesheet" href="./css/category_bar.css">
+    <link rel="stylesheet" href="./css/worth-buying.css">
+    <link rel="stylesheet" href="./css/customer-reviews.css">
+    <link rel="stylesheet" href="./css/form.css">
+    <link rel="stylesheet" href="./css/footer.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="logo-link">
+            <div class="logo">
+                <div class="logo-icon"><img src="./img/logo-icon.svg" alt=""></div>
+                <span data-translate="Peak" class="logo-text">Peak</span><span data-translate="Buy"
+                    style="color: var(--primary-color);">Buy</span>
+            </div>
+        </a>
+
+        <div class="searchbar">
+            <input type="text" class="search-input" data-translate-placeholder="search_placeholder"
+                placeholder="Search...">
+            <div class="search-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                        stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M21 21L16.65 16.65" stroke="black" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+        <div class="nav-item" id="cart-container">
+            <a href="" class="nav-link link-hover">
+                <span class="link-icon" style="position: relative;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z"
+                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z"
+                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6"
+                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div class="cart-notification"></div>
+                </span>
+
+                <span id="cart-text" data-translate="cart">Cart</span>
+            </a>
+        </div>
+        <div class="cart-box">
+            <div class="cart-dropdown">
+
+                <div class="empty-cart" data-translate="empty_cart">Your cart is empty.
+                </div>
+                <div class="close-button" data-translate="close">&times;</div>
+                <div class="cart-items-container">
+                    <div class="cart-item">
+                        <img src="product-image.jpg" alt="Product Name" class="cart-item-image">
+                        <span class="cart-item-name" data-translate="product_name">Product Name</span>
+                        <input type="number" value="1" min="1" class="cart-item-quantity">
+                        <div class="price-container">
+                            <span class="cart-item-previous-price">$99.99</span>
+                            <span class="cart-item-price">$79.99</span>
+                        </div>
+                        <button class="remove-button" data-translate="remove">Remove</button>
+                    </div>
+                </div>
+                <div class="cart-total-items">Total items:<span class="total-items-value">1</span></div>
+                <div class="cart-total-price">Total: <span class="total-price-value">$79.99</span></div>
+                <button class="order-button" data-translate="order_now">Order Now</button>
+            </div>
+        </div>
+
+
+
+
+
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+        <ul class="menu-links">
+            <li class="nav-item">
+                <span class="link-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </span>
+                <span class="link-dline">
+                    <span class="sign-text" data-translate="hello">Hello,</span>
+                    <span class="sign-subtitle">
+                        <a href="#" class="sub-link" data-translate="sign_in" onclick="showForm('signin')">Sign in</a>
+                        <span data-translate="or">or</span> <a href="#" class="sub-link register"
+                            data-translate="register" onclick="showForm('register')">Register</a>
+                    </span>
+                </span>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle link-hover" href="#" id="languageDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="link-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M2 12H22" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2V2Z"
+                                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                    <span class="lang-text">EN</span>
+                    <span class="down-arrow-icon">
+                        <svg width="12" height="8" viewBox="0 0 12 8" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                    <a class="dropdown-item" id="ar" onclick="setLanguage('ar')">العربية</a>
+                    <a class="dropdown-item" id="de" onclick="setLanguage('de')">Deutsch</a>
+                    <a class="dropdown-item" id="en" onclick="setLanguage('en')">English</a>
+                    <a class="dropdown-item" id="es" onclick="setLanguage('es')">Español</a>
+                    <a class="dropdown-item" id="fr" onclick="setLanguage('fr')">Français</a>
+                    <a class="dropdown-item" id="ku" onclick="setLanguage('ku')">Kurdî</a>
+                    <a class="dropdown-item" id="tr" onclick="setLanguage('tr')">Türkçe</a>
+
+                </div>
+            </li>
+        </ul>
+
+        <div id="form-overlay" class="hidden">
+            <div id="form-container" class="hidden">
+
+                <form id="signin-form" class="hidden">
+                    <h2 data-translate="sign_in">Sign In</h2>
+                    <div class="right-top">
+                        <div class="form-language-dropdown">
+                            <a class="form-language-toggle" href="#" role="button" aria-haspopup="true"
+                                aria-expanded="false" onclick="toggleFormLanguageDropdown(event)">
+                                <span class="form-lang-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                            stroke="white" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M2 12H22" stroke="white" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2V2Z"
+                                            stroke="white" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                <span class="form-lang-text">EN</span>
+                                <span class="form-down-arrow-icon">
+                                    <svg width="12" height="8" viewBox="0 0 12 8" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                            </a>
+                            <div class="form-dropdown-menu" id="formLanguageDropdown">
+                                <a class="form-dropdown-item" id="form-ar" onclick="changeLanguage('ar')">العربية</a>
+                                <a class="form-dropdown-item" id="form-de" onclick="changeLanguage('de')">Deutsch</a>
+                                <a class="form-dropdown-item" id="form-en" onclick="changeLanguage('en')">English</a>
+                                <a class="form-dropdown-item" id="form-es" onclick="changeLanguage('es')">Español</a>
+                                <a class="form-dropdown-item" id="form-fr" onclick="changeLanguage('fr')">Français</a>
+                                <a class="form-dropdown-item" id="form-ku" onclick="changeLanguage('ku')">Kurdî</a>
+                                <a class="form-dropdown-item" id="form-tr" onclick="changeLanguage('tr')">Türkçe</a>
+                            </div>
+                        </div>
+                        <button class="form-close-button" onclick="hideForm()" data-translate="close">&times;</button>
+                    </div>
+
+                    <div class="input-container">
+                        <input type="email" id="signin-email" placeholder="Email" required
+                            data-translate-placeholder="email_placeholder"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                        <div class="tooltip" data-translate="email_tooltip">Enter a valid email address</div>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" id="signin-password" placeholder="Password" required
+                            data-translate-placeholder="password_placeholder"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                        <div class="tooltip" data-translate="password_tooltip">Password must be at least 8 characters
+                            long, include at least one uppercase letter, one lowercase letter, and one number</div>
+                    </div>
+                    <button type="submit" data-translate="sign_in" disabled>Sign In</button>
+                </form>
+                <form id="register-form" class="hidden">
+                    <h2 data-translate="register">Register</h2>
+                    <div class="right-top">
+                        <div class="form-language-dropdown">
+                            <a class="form-language-toggle" href="#" role="button" aria-haspopup="true"
+                                aria-expanded="false" onclick="toggleFormLanguageDropdown(event)">
+                                <span class="form-lang-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                            stroke="white" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M2 12H22" stroke="white" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2V2Z"
+                                            stroke="white" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                <span class="form-lang-text">EN</span>
+                                <span class="form-down-arrow-icon">
+                                    <svg width="12" height="8" viewBox="0 0 12 8" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                            </a>
+                            <div class="form-dropdown-menu" id="formLanguageDropdown">
+                                <a class="form-dropdown-item" id="form-ar" onclick="changeLanguage('ar')">العربية</a>
+                                <a class="form-dropdown-item" id="form-de" onclick="changeLanguage('de')">Deutsch</a>
+                                <a class="form-dropdown-item" id="form-en" onclick="changeLanguage('en')">English</a>
+                                <a class="form-dropdown-item" id="form-es" onclick="changeLanguage('es')">Español</a>
+                                <a class="form-dropdown-item" id="form-fr" onclick="changeLanguage('fr')">Français</a>
+                                <a class="form-dropdown-item" id="form-ku" onclick="changeLanguage('ku')">Kurdî</a>
+                                <a class="form-dropdown-item" id="form-tr" onclick="changeLanguage('tr')">Türkçe</a>
+                            </div>
+                        </div>
+                        <button class="form-close-button" onclick="hideForm()" data-translate="close">&times;</button>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" id="register-fullname" placeholder="Full Name" required
+                            data-translate-placeholder="full_name_placeholder" pattern="[A-Za-z\s]{2,}">
+                        <div class="tooltip" data-translate="full_name_tooltip">Enter your full name (at least 2
+                            characters)</div>
+                    </div>
+                    <div class="input-container">
+                        <input type="email" id="register-email" placeholder="Email" required
+                            data-translate-placeholder="email_placeholder"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                        <div class="tooltip" data-translate="email_tooltip">Enter a valid email address</div>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" id="register-password" placeholder="Password" required
+                            data-translate-placeholder="password_placeholder"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                        <div class="tooltip" data-translate="password_tooltip">Password must be at least 8 characters
+                            long, include at least one uppercase letter, one lowercase letter, and one number</div>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" id="confirm-password" placeholder="Confirm Password" required
+                            data-translate-placeholder="confirm_password_placeholder">
+                        <div class="tooltip" data-translate="confirm_password_tooltip">Passwords must match</div>
+                    </div>
+                    <button type="submit" data-translate="register" disabled>Register</button>
+                </form>
+            </div>
+        </div>
+
+
+    </nav>
+
+    <div class="category-bar">
+        <div class="category-bar-scroll">
+            <ul class="category-list">
+                <li class="category-item category-dropdown">
+                    <button onclick="toggleDropdown()" class="category-link category-dropbtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            style="margin-right: 5px; vertical-align: middle;">
+                            <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span data-translate="categories">Categories</span>
+                    </button>
+                    <ul id="categoryDropdown" class="category-dropdown-content">
+                        <li class="main-category">
+                            <a href="#" data-translate="electronics">Electronics</a>
+                            <ul class="sub-category">
+                                <li><a href="#" data-translate="smartphones">Smartphones</a></li>
+                                <li><a href="#" data-translate="laptops">Laptops</a></li>
+                                <li><a href="#" data-translate="cameras">Cameras</a></li>
+                            </ul>
+                        </li>
+                        <li class="main-category">
+                            <a href="#" data-translate="fashion">Fashion</a>
+                            <ul class="sub-category">
+                                <li><a href="#" data-translate="clothing">Clothing</a></li>
+                                <li><a href="#" data-translate="shoes">Shoes</a></li>
+                                <li><a href="#" data-translate="accessories">Accessories</a></li>
+                            </ul>
+                        </li>
+                        <li class="main-category">
+                            <a href="#" data-translate="home_garden">Home & Garden</a>
+                            <ul class="sub-category">
+                                <li><a href="#" data-translate="furniture">Furniture</a></li>
+                                <li><a href="#" data-translate="decor">Decor</a></li>
+                                <li><a href="#" data-translate="kitchen">Kitchen</a></li>
+                            </ul>
+                        </li>
+                        <li class="main-category">
+                            <a href="#" data-translate="health_beauty">Health & Beauty</a>
+                            <ul class="sub-category">
+                                <li><a href="#" data-translate="beauty">Beauty</a></li>
+                                <li><a href="#" data-translate="health">Health</a></li>
+                                <li><a href="#" data-translate="personal_care">Personal Care</a></li>
+                            </ul>
+                        </li>
+                        <li class="main-category">
+                            <a href="#" data-translate="sports_outdoors">Sports & Outdoors</a>
+                            <ul class="sub-category">
+                                <li><a href="#" data-translate="sports">Sports</a></li>
+                                <li><a href="#" data-translate="outdoors">Outdoors</a></li>
+                                <li><a href="#" data-translate="fitness">Fitness</a></li>
+                            </ul>
+                        </li>
+                        <li class="main-category">
+                            <a href="#" data-translate="toys_kids">Toys & Kids</a>
+                            <ul class="sub-category">
+                                <li><a href="#" data-translate="toys">Toys</a></li>
+                                <li><a href="#" data-translate="baby">Baby</a></li>
+                                <li><a href="#" data-translate="kids_clothing">Kids' Clothing</a></li>
+                            </ul>
+                        </li>
+                        <li class="main-category">
+                            <a href="#" data-translate="books_media">Books & Media</a>
+                            <ul class="sub-category">
+                                <li><a href="#" data-translate="books">Books</a></li>
+                                <li><a href="#" data-translate="movies_music">Movies & Music</a></li>
+                                <li><a href="#" data-translate="magazines">Magazines</a></li>
+                            </ul>
+                        </li>
+                        <li class="main-category">
+                            <a href="#" data-translate="auto_industrial">Auto & Industrial</a>
+                            <ul class="sub-category">
+                                <li><a href="#" data-translate="automotive">Automotive</a></li>
+                                <li><a href="#" data-translate="industrial">Industrial & Scientific</a></li>
+                                <li><a href="#" data-translate="tools">Tools & Home Improvement</a></li>
+                            </ul>
+                        </li>
+                        <li class="main-category">
+                            <a href="#" data-translate="grocery_pets">Grocery & Pets</a>
+                            <ul class="sub-category">
+                                <li><a href="#" data-translate="grocery">Grocery</a></li>
+                                <li><a href="#" data-translate="pet_supplies">Pet Supplies</a></li>
+                                <li><a href="#" data-translate="gourmet_foods">Gourmet Foods</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="category-item"><a href="#" class="category-link" data-translate="new_arrivals">New
+                        Arrivals</a></li>
+                <li class="category-item"><a href="#" class="category-link" data-translate="bestsellers">Bestsellers</a>
+                </li>
+
+                <li class="category-item"><a href="#" class="category-link" data-translate="gift_ideas">Gift Ideas</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const categoryDropbtn = document.querySelector('.category-dropbtn');
+            const categoryDropdown = document.getElementById('categoryDropdown');
+            const mainCategories = document.querySelectorAll('.main-category > a');
+
+            // Toggle main dropdown
+            categoryDropbtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                categoryDropdown.classList.toggle('show');
+            });
+
+            // Handle main categories
+            mainCategories.forEach(category => {
+                category.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const subCategory = this.nextElementSibling;
+                    if (subCategory) {
+                        // Close all other open sub-categories
+                        document.querySelectorAll('.sub-category.show').forEach(openDropdown => {
+                            if (openDropdown !== subCategory) {
+                                openDropdown.classList.remove('show');
+                            }
+                        });
+                        // Toggle the clicked sub-category
+                        subCategory.classList.toggle('show');
+                    }
+                });
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('.category-dropdown')) {
+                    categoryDropdown.classList.remove('show');
+                    const openSubCategories = document.querySelectorAll('.sub-category.show');
+                    openSubCategories.forEach(subCategory => {
+                        subCategory.classList.remove('show');
+                    });
+                }
+            });
+
+            // Prevent closing when clicking inside the dropdown
+            categoryDropdown.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+            document.head.appendChild(style);
+        });
+    </script>
+
+
+
+    <div class="hero">
+        <div class="wide-box">
+            <h1 class="wide-box-text" data-translate="fifty_deals">50% OFF DEALS</h1>
+            <div class="super-deal-tag"><img src="./img/super-deal_tag.png" alt="Super Deal"></div>
+            <div class="button-container">
+                <div class="more" style="text-align: center;" data-translate="view_more">View more</div>
+            </div>
+        </div>
+        <div class="super-deal-carousel">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <div class="card" id="hot_deal_1">
+                            <div class="discount" data-translate="57_off">57% OFF</div>
+                            <div class="hot-deal-img">
+                                <img src="./assets/images/product.jpg" alt="Product 1" class="product-image">
+                            </div>
+                            <div class="hot-deals-title">
+                                <span class="hot-product-name" data-translate="product">Product Name</span>
+                                <div class="hot-prices">
+                                    <span class="hot-previous-price">$100</span>
+                                    <span class="hot-product-price">$43</span>
+                                </div>
+                                <div class="hot-add-card-btn" data-translate="add_to_cart">Add to Cart</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="card" id="hot_deal_2">
+                            <div class="discount" data-translate="70_off">70% OFF</div>
+                            <div class="hot-deal-img">
+                                <img src="./assets/images/product.jpg" alt="Product 1" class="product-image">
+                            </div>
+                            <div class="hot-deals-title">
+                                <span class="hot-product-name" data-translate="product">Product Name</span>
+                                <div class="hot-prices">
+                                    <span class="hot-previous-price">$100</span>
+                                    <span class="hot-product-price">$30</span>
+                                </div>
+                                <div class="hot-add-card-btn" data-translate="add_to_cart">Add to Cart</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="card" id="hot_deal_3">
+                            <div class="discount" data-translate="55_off">55% OFF</div>
+                            <div class="hot-deal-img">
+                                <img src="./assets/images/product.jpg" alt="Product 1" class="product-image">
+                            </div>
+                            <div class="hot-deals-title">
+                                <span class="hot-product-name" data-translate="product">Product Name</span>
+                                <div class="hot-prices">
+                                    <span class="hot-previous-price">$100</span>
+                                    <span class="hot-product-price">$45</span>
+                                </div>
+                                <div class="hot-add-card-btn" data-translate="add_to_cart">Add to Cart</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="card" id="hot_deal_4">
+                            <div class="discount" data-translate="62_off">62% OFF</div>
+                            <div class="hot-deal-img">
+                                <img src="./assets/images/product.jpg" alt="Product 1" class="product-image">
+                            </div>
+                            <div class="hot-deals-title">
+                                <span class="hot-product-name" data-translate="product">Product Name</span>
+                                <div class="hot-prices">
+                                    <span class="hot-previous-price">$100</span>
+                                    <span class="hot-product-price">$38</span>
+                                </div>
+                                <div class="hot-add-card-btn" data-translate="add_to_cart">Add to Cart</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="card" id="hot_deal_5">
+                            <div class="discount" data-translate="55_off">55% OFF</div>
+                            <div class="hot-deal-img">
+                                <img src="./assets/images/product.jpg" alt="Product 1" class="product-image">
+                            </div>
+                            <div class="hot-deals-title">
+                                <span class="hot-product-name" data-translate="product">Product Name</span>
+                                <div class="hot-prices">
+                                    <span class="hot-previous-price">$100</span>
+                                    <span class="hot-product-price">$45</span>
+                                </div>
+                                <div class="hot-add-card-btn" data-translate="add_to_cart">Add to Cart</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="card" id="hot_deal_6">
+                            <div class="discount" data-translate="66_off">66% OFF</div>
+                            <div class="hot-deal-img">
+                                <img src="./assets/images/product.jpg" alt="Product 1" class="product-image">
+                            </div>
+                            <div class="hot-deals-title">
+                                <span class="hot-product-name" data-translate="product">Product Name</span>
+                                <div class="hot-prices">
+                                    <span class="hot-previous-price">$100</span>
+                                    <span class="hot-product-price">$34</span>
+                                </div>
+                                <div class="hot-add-card-btn" data-translate="add_to_cart">Add to Cart</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-button prev">&lt;</button>
+            <button class="carousel-button next">&gt;</button>
+        </div>
+    </div>
+    <section class="product-showcase">
+        <h2 class="showcase-title" data-translate="new_products">New Products</h2>
+        <div class="product-grid">
+            <div class="showcase-product-card" id="prod_1">
+                <div class="showcase-new-product-tag" data-translate="new">New</div>
+                <img src="./assets/images/product-lightbg.jpg" alt="Product 1" class="product-image">
+                <div class="showcase-product-title">
+                    <div class="showcase-product-name" data-translate="product">Product Name</div>
+                    <div class="showcase-product-price">$99.99</div>
+                </div>
+                <button class="add-to-cart" data-translate="add_to_cart">Add to Cart</button>
+            </div>
+            <div class="showcase-product-card" id="prod_2">
+                <div class="showcase-new-product-tag" data-translate="new">New</div>
+                <img src="./assets/images/product-lightbg.jpg" alt="Product 2" class="product-image">
+                <div class="showcase-product-title">
+                    <div class="showcase-product-name" data-translate="product">Product Name</div>
+                    <div class="showcase-product-price">$79.99</div>
+                </div>
+                <button class="add-to-cart" data-translate="add_to_cart">Add to Cart</button>
+            </div>
+            <div class="showcase-product-card" id="prod_3">
+                <div class="showcase-new-product-tag" data-translate="new">New</div>
+                <img src="./assets/images/product-lightbg.jpg" alt="Product 3" class="product-image">
+                <div class="showcase-product-title">
+                    <div class="showcase-product-name" data-translate="product">Product Name</div>
+                    <div class="showcase-product-price">$129.99</div>
+                </div>
+                <button class="add-to-cart" data-translate="add_to_cart">Add to Cart</button>
+            </div>
+            <div class="showcase-product-card" id="prod_4">
+                <div class="showcase-new-product-tag" data-translate="new">New</div>
+                <img src="./assets/images/product-lightbg.jpg" alt="Product 4" class="product-image">
+                <div class="showcase-product-title">
+                    <div class="showcase-product-name" data-translate="product">Product Name</div>
+                    <di class="showcase-product-price">$149.99</di>
+                </div>
+                <button class="add-to-cart" data-translate="add_to_cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-categories">
+        <h2 class="section-title" data-translate="featured_categories">Featured Categories</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <img src="./assets/images/electronics.jpg" alt="Electronics" class="category-image">
+                <h3 class="category-name" data-translate="electronics">Electronics</h3>
+            </div>
+            <div class="category-card">
+                <img src="./assets/images/fashion.jpg" alt="Fashion" class="category-image">
+                <h3 class="category-name" data-translate="fashion">Fashion</h3>
+            </div>
+            <div class="category-card">
+                <img src="./assets/images/home-garden.jpg" alt="Home & Garden" class="category-image">
+                <h3 class="category-name" data-translate="home_garden">Home & Garden</h3>
+            </div>
+            <div class="category-card">
+                <img src="./assets/images/beauty.jpg" alt="Beauty" class="category-image">
+                <h3 class="category-name" data-translate="beauty">Beauty</h3>
+            </div>
+        </div>
+    </section>
+    <section class="worth-buying">
+        <h2 class="section-title" data-translate="worth_buying">Worth Buying</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="./assets/images/product.jpg" alt="Product 1" class="product-image">
+                <h3 class="product-name" data-translate="product_1">Wireless Earbuds</h3>
+                <p class="product-price">$79.99</p>
+                <button class="add-to-cart" data-translate="add_to_cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="./assets/images/product.jpg" alt="Product 2" class="product-image">
+                <h3 class="product-name" data-translate="product_2">Smart Watch</h3>
+                <p class="product-price">$129.99</p>
+                <button class="add-to-cart" data-translate="add_to_cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="./assets/images/product.jpg" alt="Product 3" class="product-image">
+                <h3 class="product-name" data-translate="product_3">Portable Charger</h3>
+                <p class="product-price">$39.99</p>
+                <button class="add-to-cart" data-translate="add_to_cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="./assets/images/product.jpg" alt="Product 4" class="product-image">
+                <h3 class="product-name" data-translate="product_4">Bluetooth Speaker</h3>
+                <p class="product-price">$89.99</p>
+                <button class="add-to-cart" data-translate="add_to_cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="./assets/images/product.jpg" alt="Product 5" class="product-image">
+                <h3 class="product-name" data-translate="product_5">Fitness Tracker</h3>
+                <p class="product-price">$59.99</p>
+                <button class="add-to-cart" data-translate="add_to_cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="./assets/images/product.jpg" alt="Product 6" class="product-image">
+                <h3 class="product-name" data-translate="product_6">Noise-Cancelling Headphones</h3>
+                <p class="product-price">$199.99</p>
+                <button class="add-to-cart" data-translate="add_to_cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="./assets/images/product.jpg" alt="Product 7" class="product-image">
+                <h3 class="product-name" data-translate="product_7">Wireless Mouse</h3>
+                <p class="product-price">$29.99</p>
+                <button class="add-to-cart" data-translate="add_to_cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="./assets/images/product.jpg" alt="Product 8" class="product-image">
+                <h3 class="product-name" data-translate="product_8">Laptop Stand</h3>
+                <p class="product-price">$49.99</p>
+                <button class="add-to-cart" data-translate="add_to_cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="./assets/images/product.jpg" alt="Product 9" class="product-image">
+                <h3 class="product-name" data-translate="product_9">Wireless Keyboard</h3>
+                <p class="product-price">$69.99</p>
+                <button class="add-to-cart" data-translate="add_to_cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="./assets/images/product.jpg" alt="Product 10" class="product-image">
+                <h3 class="product-name" data-translate="product_10">USB-C Hub</h3>
+                <p class="product-price">$39.99</p>
+                <button class="add-to-cart" data-translate="add_to_cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="./assets/images/product.jpg" alt="Product 11" class="product-image">
+                <h3 class="product-name" data-translate="product_11">Wireless Charging Pad</h3>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart" data-translate="add_to_cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="./assets/images/product.jpg" alt="Product 12" class="product-image">
+                <h3 class="product-name" data-translate="product_12">Smart Home Camera</h3>
+                <p class="product-price">$79.99</p>
+                <button class="add-to-cart" data-translate="add_to_cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="show-all-container">
+            <button class="show-all-btn" data-translate="show_all">Show All</button>
+        </div>
+    </section>
+
+
+    <section class="customer-reviews">
+        <h2 class="section-title" data-translate="customer_reviews">Customer Reviews</h2>
+        <div class="review-grid">
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="./assets/images/user-avatar.png" alt="John D." class="reviewer-avatar">
+                    <div class="reviewer-info">
+                        <p class="reviewer-name">John D.</p>
+                        <div class="rating" data-title="5 stars" data-translate="five_stars">★★★★★</div>
+                    </div>
+                    <div class="review-date">2 days ago</div>
+                </div>
+                <div class="review-content">
+                    <p class="review-text" data-translate="review_text_1">The wireless earbuds are a perfect balance of
+                        price and performance. I highly recommend them to everyone.</p>
+                </div>
+                <div class="review-product">
+                    <img src="./assets/images/product.jpg" alt="Product 1" class="review-product-image"
+                        data-translate="product_1">
+                    <div class="review-product-info">
+                        <div class="review-product-title" data-translate="product_1">Wireless Earbuds</div>
+                        <div class="review-product-price">$79.99</div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="./assets/images/user-avatar.png" alt="Sarah M." class="reviewer-avatar">
+                    <div class="reviewer-info">
+                        <p class="reviewer-name">Sarah M.</p>
+                        <div class="rating" data-title="4 stars" data-translate="four_stars">★★★★☆</div>
+                    </div>
+                    <div class="review-date">1 week ago</div>
+                </div>
+                <div class="review-content">
+                    <p class="review-text" data-translate="review_text_2">This watch is perfect for me! Why didn't I buy
+                        it
+                        sooner, especially at this price!</p>
+                </div>
+                <div class="review-product">
+                    <img src="./assets/images/product.jpg" alt="Product 2" class="review-product-image"
+                        data-translate="product_2">
+                    <div class="review-product-info">
+                        <div class="review-product-title" data-translate="product_2">Smart Watch</div>
+                        <div class="review-product-price">$129.99</div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="./assets/images/user-avatar.png" alt="Mike R." class="reviewer-avatar">
+                    <div class="reviewer-info">
+                        <p class="reviewer-name">Mike R.</p>
+                        <div class="rating" data-title="5 stars" data-translate="five_stars">★★★★★</div>
+                    </div>
+                    <div class="review-date">3 days ago</div>
+                </div>
+                <div class="review-content">
+                    <p class="review-text" data-translate="review_text_3">Wow! So good and useful!</p>
+                </div>
+                <div class="review-product">
+                    <img src="./assets/images/product.jpg" alt="Product 3" class="review-product-image"
+                        data-translate="product_3">
+                    <div class="review-product-info">
+                        <div class="review-product-title" data-translate="product_3">Portable Charger</div>
+                        <div class="review-product-price">$39.99</div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="./assets/images/user-avatar.png" alt="Emily L." class="reviewer-avatar">
+                    <div class="reviewer-info">
+                        <p class="reviewer-name">Emily L.</p>
+                        <div class="rating" data-title="5 stars" data-translate="five_stars">★★★★★</div>
+                    </div>
+                    <div class="review-date">5 days ago</div>
+                </div>
+                <div class="review-content">
+                    <p class="review-text" data-translate="review_text_4">This speaker is amazing! I've been looking for
+                        a
+                        product like this for a long time</p>
+                </div>
+                <div class="review-product">
+                    <img src="./assets/images/product.jpg" alt="Product 4" class="review-product-image"
+                        data-translate="product_4">
+                    <div class="review-product-info">
+                        <div class="review-product-title" data-translate="product_4">Bluetooth Speaker</div>
+                        <div class="review-product-price">$89.99</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+
+    </style>
+
+
+    <section class="newsletter-signup">
+        <h2 class="section-title" data-translate="newsletter_signup">Sign up for our newsletter</h2>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" data-translate-placeholder="enter_email" required>
+            <button type="submit" data-translate="subscribe">Subscribe</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <div class="footer-column">
+                <h3 data-translate="about_us">About Us</h3>
+                <ul>
+                    <li><a href="#" data-translate="our_story">Our Story</a></li>
+                    <li><a href="#" data-translate="careers">Careers</a></li>
+                    <li><a href="#" data-translate="press">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 data-translate="customer_service">Customer Service</h3>
+                <ul>
+                    <li><a href="#" data-translate="contact_us">Contact Us</a></li>
+                    <li><a href="#" data-translate="shipping_info">Shipping Information</a></li>
+                    <li><a href="#" data-translate="returns_exchanges">Returns & Exchanges</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 data-translate="follow_us">Follow Us</h3>
+                <ul>
+                    <li><a href="#" class="social-icon">Facebook</a></li>
+                    <li><a href="#" class="social-icon">Instagram</a></li>
+                    <li><a href="#" class="social-icon">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><span data-translate="copyright">&copy; 2023 PeakBuy.</span> <span>By</span> <a
+                    href="https://github.com/vsincar" target="_blank" data-translate="author_name">Veysel Sincar</a>
+                <span data-translate="all_rights_reserved">All rights
+                    reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="./JS/onload_page.js"></script>
+    <script src="./JS/add_to_cart.js"></script>
+    <script src="./JS/hero_carousel.js"></script>
+    <script src="./JS/lang_option.js"></script>
+    <script src="./JS/form.js"></script>
+</body>
+
+</html>

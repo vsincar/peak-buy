@@ -1,0 +1,295 @@
+.hero {
+  border-radius: 10px;
+  background-color: rgba(253, 192, 213, 0.671);
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 2rem;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.super-deal-carousel {
+  position: relative;
+  width: 95%;
+  overflow: hidden;
+  margin: 1.5rem 2rem;
+}
+.hot-deal-img img {
+  width: 100%;
+  height: 14.5rem;
+  object-fit: cover;
+}
+.hot-deals-title {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 0.6rem;
+  left: 0;
+  padding: 0 0.6rem;
+}
+
+.hot-product-name {
+  align-items: center;
+  margin-top: 1.2rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.hot-prices {
+  display: flex;
+  flex-direction: column;
+}
+.hot-previous-price {
+  text-decoration: line-through 3px red;
+  color: #8f8f8f;
+}
+.hot-product-price {
+  align-items: center;
+  font-weight: 800;
+  background-color: var(--primary-color);
+  color: #000;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.hot-add-card-btn {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  width: 9.5rem;
+  top: -2rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--text-color);
+  color: #000;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #bbb;
+  cursor: pointer;
+}
+.hot-add-card-btn:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.card:hover .hot-add-card-btn {
+  display: flex;
+}
+.carousel-container {
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-slide {
+  flex: 0 0 20rem;
+  width: 15rem;
+
+  margin-right: 1.25rem;
+}
+
+.card {
+  position: relative;
+  background-color: #fff;
+  border-radius: 8px;
+  width: 15.5rem;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.discount {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: bold;
+  background-color: #ff0000;
+  color: #fff;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+  border-radius: 8px 0 8px 0;
+  margin-bottom: 5px;
+  animation: shine 2s infinite alternate;
+  animation-delay: 0.5s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@keyframes shine {
+  from {
+    background-color: #ff0000;
+    opacity: 1;
+    color: #fff;
+  }
+  to {
+    background-color: #ffffff;
+    opacity: 1;
+    color: #ff0000;
+  }
+}
+
+.carousel-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(192, 192, 192, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-button:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.carousel-button.prev {
+  left: 0.625rem;
+}
+
+.carousel-button.next {
+  right: 0.625rem;
+}
+
+.wide-box {
+  flex: 30rem;
+  height: 33rem;
+  margin: 2rem;
+  align-self: flex-start;
+  border-radius: 10px;
+  background-color: red;
+  min-width: 20rem;
+  position: relative;
+}
+.super-deal-tag {
+  display: flex;
+  margin-top: 8rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wide-box-text {
+  color: white;
+  font-size: 18pt;
+  font-weight: 900;
+  text-align: center;
+  margin-top: 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 25rem;
+}
+
+.more {
+  border: 1px solid #bbb;
+  background-color: var(--text-color);
+  width: 15rem;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.more:hover {
+  background-color: var(--primary-color);
+  color: #000;
+}
+
+@media (max-width: 1280px) {
+  .wide-box-text {
+    font-size: 16pt;
+  }
+}
+@media (max-width: 1024px) {
+  .wide-box-text {
+    font-size: 14pt;
+  }
+}
+
+@media (max-width: 961px) {
+  .super-deal-tag {
+    display: none;
+  }
+  .wide-box {
+    height: 30rem;
+    background: linear-gradient(to bottom, #ff0000, rgba(255, 0, 0, 0));
+  }
+  .more {
+    bottom: 0;
+  }
+  .hero {
+    height: 34rem;
+  }
+  .button-container {
+    margin-top: 2rem;
+  }
+  .super-deal-carousel {
+    top: 6rem;
+    z-index: 3;
+    position: absolute;
+  }
+  .wide-box-text {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .button-container {
+    margin-top: 2rem;
+  }
+  .wide-box-text {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 632px) {
+  .wide-box {
+    width: 90%;
+  }
+
+  .hero {
+    position: relative;
+  }
+  .wide-box-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 563px) {
+  .wide-box-text {
+    font-size: 13pt;
+  }
+}
