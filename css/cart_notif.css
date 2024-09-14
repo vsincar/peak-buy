@@ -20,11 +20,11 @@
   position: absolute;
   top: 4rem;
   right: 0;
-  width: 30rem;
-  max-height: 300px;
+  width: 90%;
+  max-width: 30rem;
+  max-height: 80vh;
   overflow-y: auto;
   background-color: #fff;
-  margin: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 2000;
   padding: 10px;
@@ -91,9 +91,17 @@
   color: #fff;
 }
 
+@media (min-width: 768px) {
+  .cart-dropdown {
+    width: 80%;
+    right: 1rem;
+  }
+}
+
 @media (min-width: 1024px) {
   .cart-dropdown {
-    right: 3rem;
+    width: 70%;
+    right: 2rem;
   }
 
   .cart-dropdown:hover .close-button {
@@ -104,13 +112,15 @@
 
 @media (min-width: 1200px) {
   .cart-dropdown {
-    right: 10rem;
+    width: 60%;
+    right: 3rem;
   }
 }
 
 @media (min-width: 1400px) {
   .cart-dropdown {
-    right: 20rem;
+    width: 50%;
+    right: 4rem;
   }
 }
 
@@ -120,7 +130,7 @@
 }
 
 .cart-items-container {
-  max-height: 300px;
+  max-height: calc(80vh - 150px);
   overflow-y: auto;
   margin-bottom: 10px;
   margin-top: 2rem;
