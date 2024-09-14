@@ -69,7 +69,8 @@ nav > * {
   display: flex;
   position: relative;
   min-width: 6rem;
-  max-width: 30rem;
+  max-width: 35rem;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -293,18 +294,25 @@ ul {
     width: max-content;
   }
 }
-/* Mobile devices */
-@media (max-width: 480px) {
-  /* Add styles for mobile devices here */
-  #cart-container #cart-text {
-    display: none;
-  }
-  .logo > span {
-    font-size: 1rem;
-    font-weight: 600;
+
+/* Desktops, large screens */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  /* Add styles for desktops and large screens here */
+  .searchbar {
   }
 }
 
+/* Extra large screens, TV */
+@media screen and (min-width: 1201px) {
+  /* Add styles for extra large screens and TVs here */
+}
+/* Small screens, laptops */
+@media (max-width: 1024px) {
+  /* Add styles for small screens and laptops here */
+  .cart-text {
+    display: inline;
+  }
+}
 /* iPads, Tablets */
 @media (max-width: 768px) {
   .logo > span {
@@ -356,6 +364,7 @@ ul {
 
   .searchbar {
     max-width: 25rem;
+    width: 80%;
   }
 
   .search-icon {
@@ -387,20 +396,14 @@ ul {
   }
 }
 
-/* Small screens, laptops */
-@media (max-width: 1024px) {
-  /* Add styles for small screens and laptops here */
-  .cart-text {
-    display: inline;
+/* Mobile devices */
+@media (max-width: 480px) {
+  /* Add styles for mobile devices here */
+  #cart-container #cart-text {
+    display: none;
   }
-}
-
-/* Desktops, large screens */
-@media screen and (min-width: 1025px) and (max-width: 1200px) {
-  /* Add styles for desktops and large screens here */
-}
-
-/* Extra large screens, TV */
-@media screen and (min-width: 1201px) {
-  /* Add styles for extra large screens and TVs here */
+  .logo > span {
+    font-size: 1rem;
+    font-weight: 600;
+  }
 }
